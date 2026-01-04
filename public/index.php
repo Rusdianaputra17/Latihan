@@ -33,7 +33,7 @@ $posts = $stmt->fetchAll();
 
     <a href="create.php" class="top-btn">Tambah Post</a>
 
-    <table class="table-mahasiswa">
+    <table class="table-blog">
         <thead>
             <tr>
                 <th>ID</th>

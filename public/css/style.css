@@ -16,7 +16,6 @@ a {
     color: inherit;
 }
 
-
 .container {
     width: 90%;
     max-width: 1000px;
@@ -26,7 +25,6 @@ a {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 
 h1 {
     margin-bottom: 20px;
@@ -48,28 +46,28 @@ h1 {
     background-color: #45a049;
 }
 
-.table-mahasiswa {
+.table-blog {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.table-mahasiswa th,
-.table-mahasiswa td {
+.table-blog th,
+.table-blog td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
 }
 
-.table-mahasiswa th {
+.table-blog th {
     background-color: #f2f2f2;
 }
 
-.table-mahasiswa tr:nth-child(even) {
+.table-blog tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.table-mahasiswa tr:hover {
+.table-blog tr:hover {
     background-color: #f1f1f1;
 }
 
@@ -148,7 +146,7 @@ form button[type="submit"]:hover {
     background-color: #da190b;
 }
 
-.table-mahasiswa img {
+.table-blog img {
     border-radius: 5px;
 }
 
@@ -157,8 +155,8 @@ p {
 }
 
 @media (max-width: 768px) {
-    .table-mahasiswa th,
-    .table-mahasiswa td {
+    .table-blog th,
+    .table-blog td {
         padding: 8px;
         font-size: 14px;
     }

@@ -1,5 +1,31 @@
 <?php
+session_start();
+require_once __DIR__ . '/../config/database.php';
 
+$db = new Database();
+$conn = $db->getConnection();
+
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = md5($_POST['password']); // sesuai dengan database (MD5)
+
+    $query = "SELECT * FROM users WHERE username = :username AND password = :password";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
+    $stmt->execute();
+
+    $user = $stmt->fetch();
+
+    if ($user) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header("Location: ../public/index.php"); // halaman setelah login
+        exit;
+    } else {
+        $error = "Username atau password salah!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +34,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="login-body">
